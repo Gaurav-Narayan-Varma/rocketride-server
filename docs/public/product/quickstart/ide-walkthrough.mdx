@@ -40,9 +40,9 @@ Every pipeline starts with a **source node**:
 1. Add a **Chat** source node: an interactive conversational interface.
 2. Add an **LLM** node: pick a provider (OpenAI, Anthropic, Google, …) and set your API key.
 3. Connect the Chat source's output lane to the LLM's input lane.
+4. Add a 'Return Answers' node and connect the LLM node to it.
 
-The result is a `Chat → LLM` pipeline; the LLM's response routes back to the chat interface
-automatically.
+The result is a `Chat → LLM` pipeline.
 
 ## 5. Run it
 
