@@ -47,6 +47,14 @@ The result is a `Chat → LLM → Return Answers` pipeline. The Return Answers n
 LLM's response back to the chat interface. Without it the pipeline still runs, but the chat
 replies "I don't see any answers in there..." instead of showing the LLM's response.
 
+:::tip Compare with a working pipeline
+[`quickstart-chat.pipe`](https://github.com/rocketride-org/rocketride-server/blob/develop/examples/quickstart-chat.pipe)
+is the finished `Chat → LLM → Return Answers` pipeline, using OpenAI. Save it into your
+workspace and open it to see the expected wiring, or run it directly: add
+`ROCKETRIDE_OPENAI_KEY=<your key>` to your workspace `.env`, or paste your key into the
+OpenAI node's settings.
+:::
+
 ## 5. Run it
 
 Press the **<LuPlay className="rr-inline-icon" /> Run button** on the source node, or launch
