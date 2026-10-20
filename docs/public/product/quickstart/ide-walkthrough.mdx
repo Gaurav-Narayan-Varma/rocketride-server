@@ -9,7 +9,7 @@ import { LuPlay } from 'react-icons/lu';
 # Build a pipeline in your IDE
 
 The visual canvas in the VS Code extension is the fastest way to author a `.pipe` file.
-This walkthrough starts from zero and finishes with a running `Chat → LLM` pipeline you
+This walkthrough starts from zero and finishes with a running `Chat → LLM → Return Answers` pipeline you
 can talk to.
 
 ## 1. Install the extension
@@ -39,10 +39,13 @@ Every pipeline starts with a **source node**:
 
 1. Add a **Chat** source node: an interactive conversational interface.
 2. Add an **LLM** node: pick a provider (OpenAI, Anthropic, Google, …) and set your API key.
-3. Connect the Chat source's output lane to the LLM's input lane.
-4. Add a 'Return Answers' node and connect the LLM node to it.
+3. Add a **Return Answers** node.
+4. Connect Chat → LLM → Return Answers: the Chat source's **Questions** output lane to the
+   LLM's **Questions** input, then the LLM's **Answers** output lane to **Return Answers**.
 
-The result is a `Chat → LLM` pipeline.
+The result is a `Chat → LLM → Return Answers` pipeline. The Return Answers node sends the
+LLM's response back to the chat interface. Without it the pipeline still runs, but the chat
+replies "I don't see any answers in there..." instead of showing the LLM's response.
 
 ## 5. Run it
 
